@@ -1,0 +1,36 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment directories
+venv/
+env/
+
+# Ignore Django database file
+db.sqlite3
+
+# Ignore Django migration files (optional, only if not part of the project)
+migrations/
+
+# Ignore IDE or editor-specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore secret keys and environment variable files
+*.env
+
+# Ignore model files
+*.h5
+*.pkl
+*.pth
+*.pt
+model/
+training_data/

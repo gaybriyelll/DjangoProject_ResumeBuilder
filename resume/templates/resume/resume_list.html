@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Generated Resumes</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            padding-top: 50px;
+        }
+
+        /* Heading styles */
+        h2 {
+            font-size: 28px;
+            color: #4a5d23; /* Deep moss green */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Resume container styling */
+        .resume {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 600px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Resume hover effect */
+        .resume:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Resume version styling */
+        .resume h3 {
+            font-size: 22px;
+            color: #4a5d23;
+            margin-bottom: 10px;
+        }
+
+        /* Resume content styling */
+        .resume p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        /* Provide feedback link */
+        .resume a {
+            text-decoration: none;
+            color: #8a9a5b;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .resume a:hover {
+            color: #4a5d23; /* Darker moss green */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            .resume {
+                width: 100%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .resume h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Generated Resumes</h2>
+    {% for resume in resumes %}
+        <div class="resume">
+            <h3>Version {{ resume.version }}</h3>
+            <p>{{ resume.generated_resume }}</p>
+            <a href="{% url 'feedback' resume.id %}">Provide Feedback</a>
+        </div>
+    {% empty %}
+        <p>No resumes generated yet.</p>
+    {% endfor %}
+</body>
+</html>

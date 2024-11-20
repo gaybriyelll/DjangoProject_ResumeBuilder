@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Resume Builder</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Heading styling */
+        h1 {
+            font-size: 32px;
+            color: #4a5d23; /* Deep moss green */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Paragraph styling */
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Link styling */
+        a {
+            text-decoration: none;
+            color: #8a9a5b;
+            font-weight: bold;
+            padding: 12px 25px;
+            margin: 10px 0;
+            border: 2px solid #8a9a5b;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #8a9a5b;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            a {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to your Dashboard!</h2>
+    <p>Here you can set your job preferences, view and generate resumes.</p>
+    <a href="{% url 'job_preference' %}">Go to Job Preferences</a>
+    <p><a href="{% url 'resume_list' %}">View Your Resumes</a></p>
+</body>
+</html>
